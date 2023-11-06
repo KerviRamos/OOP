@@ -2,12 +2,12 @@
 
 ### Python - Code Execution
 
-The "Python Interpreter and runtime environment" work together to reads and processes code in the following stages
+The "Python Interpreter and runtime environment" work together to read and process code in the following steps
 
 1. Source Code - Python code resides in a .py file or in the python interpreter.
-2. Lexical Analysis - 
-3. Parsing -
-4. Creating the Abstract Syntax Tree - 
+2. Lexical Analysis 
+3. Parsing
+4. Creating the Abstract Syntax Tree 
 5. Compilation to Bytecode - The bytecode is stored in .pyc files.
 6. Execution by the Python Virtual Machine (PVM) - The bytecode is executed by the PVM. The PVM is responsible for interpreting and executing the code.
     1. Dymanic Typing and Memory Management
