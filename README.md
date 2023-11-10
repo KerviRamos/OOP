@@ -14,7 +14,8 @@ The "Python Interpreter and runtime environment" work together to read and proce
     2. Running the code - Code execution starts from top to bottom.
     3. Input and output interaction
     4. Exception Handling
-    5. Termination 
+    5. Termination
+
 ### Python - Typing
 <dl>
     <dt>Duck Typing</dt>
@@ -35,10 +36,33 @@ The "Python Interpreter and runtime environment" work together to read and proce
 
 ### Understanding Python's Scopes and Namespaces
 
+#### Namespaces: 
+
+1. A namespace is a mapping from names to objects.
+2. The set of attributes of an object also form a namespace.
+3. There is no relationship between names in different namespaces. (max(), module.max() can coexist).
+4. Reference to names and functions are considered namespace attributes.
+5. Attributes may be __read-only__ or __writable__. Writable attributes can be updated or deleted.
+6. Namespaces are created at different moments during the execution of the program and these namespaces have different lifetimes. 
+    1. The ___built-in namespace__ is created when the Python interpreter starts up and it is never deleted.
+    2. The __global namespace__ for a module is created when the module definition is read and typically the module namespaces last until the interpreter quits.
+    3. The __local namespace__ for a function is created when the function is called, and deleted when the function returns or raises. Recursive invocations have their own local namespace.
+
+#### Scopes: 
+1. A scope is the region where a namespace is directly accessible. 
+2. At any time during execution;
+    1. The innermost scope is searched first -  Contains the local names.
+    2. The scope of any enclosing functions is searched next
+    3. The next to last scope is the module’s namespace which contains the module’s global names.
+    4. The outermost scope is searched last - Containing the built-in names.
+
 ### Features:
+
 <dl>
     <dt>Class/Objects</dt>
     <dd>
+        Class definition places another namespace in the local scope.
+        Assignments are binding names to the objects.
         <em><strong>Instance</strong></em> variables and methods,
         <em><strong>Class</strong></em> variable and methods, and 
         <em><strong>Static</strong></em> variables and methods.
