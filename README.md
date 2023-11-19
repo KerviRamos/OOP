@@ -65,10 +65,9 @@ The "Python Interpreter and runtime environment" work together to read and proce
         Below, you can find an example of a class declaration. Class names are defined using Pascal Case.
     </dd>
     <dd>
-        <code> 
-            class VehicleRegistration:</br>
-                &nbsp&nbsp&nbsp&nbsp pass
-        </code> 
+    <code> 
+    class VehicleRegistration:</br>
+    </code> 
     </dd>
     <dd> 
         Constructor 
@@ -76,13 +75,6 @@ The "Python Interpreter and runtime environment" work together to read and proce
     <dd> Instance of a Class </dd>
     <dd> Class Variables and Methods </dd>
     <dd> Static Variables and Methods </dd>
-    <dd>
-        Class definition places another namespace in the local scope.
-        Assignments are binding names to the objects.
-        <em><strong>Instance</strong></em> variables and methods,
-        <em><strong>Class</strong></em> variable and methods, and 
-        <em><strong>Static</strong></em> variables and methods.
-    </dd>
     <dt>Encapsulation</dt>
     <dd>
         Data hiding is not as strict in Python. (Conventions or Dataclasses approach).
