@@ -60,6 +60,22 @@ The "Python Interpreter and runtime environment" work together to read and proce
 
 <dl>
     <dt>Class/Objects</dt>
+    <dd> 
+        Classes: Classes are the blueprint on an object. Class definition places another namespace in the local scope. 
+        Below, you can find an example of a class declaration. Class names are defined using Pascal Case.
+    </dd>
+    <dd>
+        <code> 
+            class VehicleRegistration:</br>
+                &nbsp&nbsp&nbsp&nbsp pass
+        </code> 
+    </dd>
+    <dd> 
+        Constructor 
+    </dd>
+    <dd> Instance of a Class </dd>
+    <dd> Class Variables and Methods </dd>
+    <dd> Static Variables and Methods </dd>
     <dd>
         Class definition places another namespace in the local scope.
         Assignments are binding names to the objects.
