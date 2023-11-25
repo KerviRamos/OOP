@@ -56,39 +56,35 @@ The "Python Interpreter and runtime environment" work together to read and proce
     3. The next to last scope is the module’s namespace which contains the module’s global names.
     4. The outermost scope is searched last - Containing the built-in names.
 
-### Features:
+### Core OOP Features:
 
-<dl>
-    <dt>Class/Objects</dt>
-    <dd> 
-        Classes: Classes are the blueprint on an object. Class definition places another namespace in the local scope. 
-        Below, you can find an example of a class declaration. Class names are defined using Pascal Case.
-    </dd>
-    <dd>
-    <code> 
-    class VehicleRegistration:</br>
-    </code> 
-    </dd>
-    <dd> 
-        Constructor 
-    </dd>
-    <dd> Instance of a Class </dd>
-    <dd> Class Variables and Methods </dd>
-    <dd> Static Variables and Methods </dd>
-    <dt>Encapsulation</dt>
-    <dd>
-        Data hiding is not as strict in Python. (Conventions or Dataclasses approach).
-    </dd>
-    <dt>Inheritance</dt>
-    <dd>
-        Single and Multiple Inheritance.
-    </dd>
-    <dt>Polymorphism</dt>
-    <dd>
-        Overriding and Overloading.
-    </dd>
-    <dt>Abstraction</dt>
-    <dd>
-        ABC Abstraction
-    </dd>
-</dl>
+#### Class and Objects
+Classes are defined as the blueprint of an object. Everytime a developer defines a class, attributes and methods, the class definition creates another namespace in the local scope. In Python, classes follow a "PascalCase" naming convention.
+
+##### A. Constructor:
+The constructor is responsible for the instantiation process of an object. The instantiation process consist of two main steps; creation (overriding the "`__new__()`" dunder method) and initialization (overriding "`__init__()`" dunder method) steps.
+
+1. Overview of the Instantiation Process:
+In Python, the constructor triggers the instantiation process, which consist of two separate steps. The first step creates and returns an empty object. The second step, initalizes the objects attributes with the appropiate inital data. 
+
+2. Creation Step (`__new__()`):
+
+3. Initalization Step (`__init__()`):
+
+##### B. Instances of a Class:
+
+##### C. Class Variables and Methods:
+
+##### D. Static Variables and Methods:
+
+#### Encapsulation
+Data hiding is as strict in Python. (Draft)
+
+#### Inheritance
+Single and Multiple Inheritance. (Draft)
+
+#### Polymorphism
+Overriding and Overloading. (Draft)
+
+#### Abstraction 
+ABC Abstraction. (Draft)
