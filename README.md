@@ -61,21 +61,21 @@ The "Python Interpreter and runtime environment" work together to read and proce
 #### Class and Objects
 Classes are defined as the blueprint of an object. Everytime a developer defines a class, attributes and methods, the class definition creates another namespace in the local scope. In Python, classes follow a "PascalCase" naming convention.
 
-##### A. Constructor:
+##### A. Constructor (Instances of a Class):
 The constructor is responsible for the instantiation process of an object. The instantiation process consist of two main steps; creation (overriding the "`__new__()`" dunder method) and initialization (overriding "`__init__()`" dunder method) steps.
 
 1. Overview of the Instantiation Process:
-In Python, the constructor triggers the instantiation process, which consist of two separate steps. The first step creates and returns an empty object. The second step, initalizes the objects attributes with the appropiate inital data. 
+In Python, the constructor triggers the instantiation process, which consist of two separate steps. The first step creates and returns an empty object. The second step, initalizes the objects attributes with the appropiate inital data.
+In the case that, the first step, `__new__()` returns an instance of a different class; Python will not run `__init__()` dunder method for the current class.
 
 2. Creation Step (`__new__()`):
+Typically, you don't need to defined the `__new__()` dunder method eveytime you create a class. Most of the time, the base implementation of the `__new__()` dunder method is enough to build an empty object of your class. If we need to subclass immutible data types, return instance of a different class, etc, we must write a custom implementation of the `__new__()` as part of our class definition. 
 
 3. Initalization Step (`__init__()`):
 
-##### B. Instances of a Class:
+##### B. Class Variables and Methods:
 
-##### C. Class Variables and Methods:
-
-##### D. Static Variables and Methods:
+##### C. Static Variables and Methods:
 
 #### Encapsulation
 Data hiding is as strict in Python. (Draft)

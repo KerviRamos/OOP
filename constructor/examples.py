@@ -21,6 +21,17 @@ class SoccerBall:
         return f"{type(self).__name__}, id: {id(self)}, data: size= {self.size}, color= {self.color} "
 
 
+""" Orders of Operations with caveats """
+
+""" __new__() - Subclassing Immutable Built-in Types."""
+
+""" __new__() - Returning instance of a different class."""
+
+""" __new__() - Single Instance in your Classes."""
+
+""" __new__() - namedtuple factory functions."""
+
+
 def main() -> None:
     """Driver"""
     test_instant_process = SoccerBall("Large", "White")
