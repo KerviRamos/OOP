@@ -58,10 +58,10 @@ The "Python Interpreter and runtime environment" work together to read and proce
 
 ### Core OOP Features:
 
-#### Classes and Objects
+#### A. Classes and Objects
  In Python, classes follow a "PascalCase" naming convention. Classes are defined as the blueprint of an object. Everytime a developer defines a class, attributes and methods, the class definition creates another namespace in the local scope. Attributes refer to the properties or data associated with a specific object of a given class. Methods refer to the different behavior that an object will show. Attributes and methods are referred to as the members of a class or object.
 
-##### A. Constructor (Instances of a Class):
+#### B. Constructor (Instances of a Class):
 The constructor is responsible for the instantiation process of an object. The instantiation process consist of two main steps; creation (overriding the "`__new__()`" dunder method) and initialization (overriding "`__init__()`" dunder method) steps.
 
 1. Overview of the Instantiation Process:
@@ -74,4 +74,16 @@ Typically, you don't need to defined the `__new__()` dunder method eveytime you 
 3. Initalization Step (`__init__()`):
 The `__init__()` dunder method allows you to create an instance of the objects or a custom instance of objects. You can achieve the creation of a custom instance of the object by overriding the `__init__()` under method. It is important to validate the arguments passed through the method during the creation stage. Lastly, the init dunder method does not return any object other than None.
 
-##### B. Instance Variables and Methods:
+#### C. Public vs Non Public Members (Encapsulation):
+Python does not explicitly differentiate between private, protected, and public attributes as seen in statically typed languages like Java or C++. Instead, all attributes in Python are accessible. However, Python utilizes a naming convention to achieve behavior similar to private attributes. This convention, marked by a leading underscore, either permits or restricts communication not intended for use from outside the containing class or object.
+
+The convention involves a single leading underscore for a member's name. Another variation uses two leading underscores for the member names of the class. It's essential to note that using a single leading underscore does not prevent direct access to members within the class. Therefore, when a leading underscore is present in the members of a class, it is considered best practice to refrain from accessing the member from outside the class scope. Non-public members exist solely to support the internal implementation of a given class and may be removed at any time. Consequently, non-public members should not be used directly in any client code because they are likely to be removed or changed.
+
+When writing a class, initially set all attributes as non-public and then make attributes public as needed for your design or use case.
+Name mangling enforces non-public members by prepending the class’s name to the member’s names, like in _ClassName__attribute or _ClassName__method. This results in name hiding, preventing direct access to the member of a given class outside the class’s scope
+
+#### D. Class and Instance Attributes:
+
+
+
+#### E. Instance, Class, and Static Methods:
