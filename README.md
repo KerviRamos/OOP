@@ -1,6 +1,6 @@
 # Object Oriented Programming - Python
 
-### Python - Code Execution
+### Code Execution
 
 The "Python Interpreter and runtime environment" work together to read and process code in the following steps
 
@@ -58,8 +58,8 @@ The "Python Interpreter and runtime environment" work together to read and proce
 
 ### Core OOP Features:
 
-#### Class and Objects
-Classes are defined as the blueprint of an object. Everytime a developer defines a class, attributes and methods, the class definition creates another namespace in the local scope. In Python, classes follow a "PascalCase" naming convention.
+#### Classes and Objects
+ In Python, classes follow a "PascalCase" naming convention. Classes are defined as the blueprint of an object. Everytime a developer defines a class, attributes and methods, the class definition creates another namespace in the local scope. Attributes refer to the properties or data associated with a specific object of a given class. Methods refer to the different behavior that an object will show. Attributes and methods are referred to as the members of a class or object.
 
 ##### A. Constructor (Instances of a Class):
 The constructor is responsible for the instantiation process of an object. The instantiation process consist of two main steps; creation (overriding the "`__new__()`" dunder method) and initialization (overriding "`__init__()`" dunder method) steps.
@@ -69,22 +69,9 @@ In Python, the constructor triggers the instantiation process, which consist of 
 In the case that, the first step, `__new__()` returns an instance of a different class; Python will not run `__init__()` dunder method for the current class.
 
 2. Creation Step (`__new__()`):
-Typically, you don't need to defined the `__new__()` dunder method eveytime you create a class. Most of the time, the base implementation of the `__new__()` dunder method is enough to build an empty object of your class. If we need to subclass immutible data types, return instance of a different class, etc, we must write a custom implementation of the `__new__()` as part of our class definition. 
+Typically, you don't need to defined the `__new__()` dunder method eveytime you create a class. Most of the time, the base implementation of the `__new__()` dunder method, located in the 'object' base class, is enough to build an empty object of your class. If we need to subclass immutible data types, return instance of a different class, etc, we must write a custom implementation of the `__new__()` as part of our class definition. 
 
 3. Initalization Step (`__init__()`):
+The `__init__()` dunder method allows you to create an instance of the objects or a custom instance of objects. You can achieve the creation of a custom instance of the object by overriding the `__init__()` under method. It is important to validate the arguments passed through the method during the creation stage. Lastly, the init dunder method does not return any object other than None.
 
-##### B. Class Variables and Methods:
-
-##### C. Static Variables and Methods:
-
-#### Encapsulation
-Data hiding is as strict in Python. (Draft)
-
-#### Inheritance
-Single and Multiple Inheritance. (Draft)
-
-#### Polymorphism
-Overriding and Overloading. (Draft)
-
-#### Abstraction 
-ABC Abstraction. (Draft)
+##### B. Instance Variables and Methods:

@@ -18,18 +18,21 @@ class SoccerBall:
 
     def __repr__(self) -> str:
         """Object print represenation"""
-        return f"{type(self).__name__}, id: {id(self)}, data: size= {self.size}, color= {self.color} "
+        return (
+            f"{type(self).__name__}"
+            f"id: {id(self)}, data: size= {self.size}, color= {self.color}"
+        )
 
 
-""" Orders of Operations with caveats """
+# """ Orders of Operations with caveats """
 
-""" __new__() - Subclassing Immutable Built-in Types."""
+# """ __new__() - Subclassing Immutable Built-in Types."""
 
-""" __new__() - Returning instance of a different class."""
+# """ __new__() - Returning instance of a different class."""
 
-""" __new__() - Single Instance in your Classes."""
+# """ __new__() - Single Instance in your Classes."""
 
-""" __new__() - namedtuple factory functions."""
+# """ __new__() - namedtuple factory functions."""
 
 
 def main() -> None:
