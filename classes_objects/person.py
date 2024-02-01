@@ -1,9 +1,9 @@
-""" Employee Class Definition """
+""" Person Class Definition """
 #!usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
 
-class Employee:
+class Person:
     """Class Members
     Attributes:
     - first_name, last_name, email, salary
@@ -15,21 +15,21 @@ class Employee:
      - Encapsulation
     """
 
-    def __new__(cls, *args, **kwargs) -> "Employee":
-        """Constructor Phase 1: Employee Object creation"""
+    def __new__(cls, *args, **kwargs) -> "Person":
+        """Constructor Phase 1: Person Object creation"""
         return super().__new__(cls)
 
     def __init__(
         self, first_name: str, last_name: str, email: str, salary: float
     ) -> None:
-        """Contrustor Phase 2: Employee Object initializing state/properties"""
+        """Contrustor Phase 2: Person Object initializing state/properties"""
         self.first_name: str = first_name
         self.last_name: str = last_name
         self.email: str = email
         self.salary: float = salary
 
     def __repr__(self) -> str:
-        """Employee Object representation"""
+        """Person Object representation"""
         return (
             f"{type(self).__name__} "
             f"state:{(self.first_name, self.last_name, self.email, self.salary)}"
@@ -48,7 +48,7 @@ def main() -> None:
     """Driver testing function"""
     to_print = "Object instantiation"
     data = ["Kervi", "Ramos", "kr@me.com", 90000]
-    obj_repr = Employee(*data)
+    obj_repr = Person(*data)
     obj_retrieve = obj_repr.retrieve_info()
 
     print(to_print, obj_repr, obj_retrieve, sep="\n")

@@ -83,7 +83,21 @@ When writing a class, initially set all attributes as non-public and then make a
 Name mangling enforces non-public members by prepending the class’s name to the member’s names, like in _ClassName__attribute or _ClassName__method. This results in name hiding, preventing direct access to the member of a given class outside the class’s scope
 
 #### D. Class and Instance Attributes:
+A class can have two types of attributes;
 
+* Class attributes:
+Class attributes are defined inside the class body but outside of any method defined in the class. All of the objects created from a particular class will share the same “class” attribute with the same value. If the class attribute is changed, then that change will reflect on all created instances of the class. Class attributes can be accessed via class or via one of its instances. However, you will only be able to modify a class attribute via a class.
 
+* Instance attributes:
+Instance attributes are variables associated with a specific object of a class, meaning they are attached to the object itself. In Python, you can dynamically attach attributes to objects that have already been created.
 
 #### E. Instance, Class, and Static Methods:
+
+* Instance Methods:
+The first parameter in the method definition is 'self.' This method is primarily used to provide the object instance behavior capabilities. The instance method can be employed to modify an object's state and even the class state through self.`__class__`.attribute
+
+* Class Methods:
+The definition of class methods requires the addition of a @classmethod decorator. The first parameter for a class method is 'cls,' unlike the 'self' parameter used in instance methods. As the class method takes the 'cls' parameter, it cannot directly modify an object's instance state. If you wish to modify the instance state, you should use methods with the 'self' parameter. These methods can be utilized to define alternative constructors for your classes.
+
+* Static Methods:
+A static method, marked with the @staticmethod decorator, doesn't require a 'self' or 'cls' parameter but can accept any number of arbitrary parameters. Unlike instance and class methods, a static method cannot modify either an object's state or a class's state. Static methods have limitations on the data they can access. They are commonly employed for utility functions that don't depend on the state of a specific instance but perform a more general task related to the class.
