@@ -1,0 +1,84 @@
+"""Tesla Sales Classes"""
+
+#!usr/bin/env python3
+# -*- coding: UTF-8 -*-
+
+
+class OaklandDealership:
+    """Car Dealership Class Located in Oakland, CA"""
+
+    __inventory = {}
+
+    @classmethod
+    @property
+    def inventory(cls) -> dict[str, int]:
+        """Getter Definition"""
+        return cls.__inventory
+
+    @classmethod
+    def update(cls, obj: "TeslaVehicle") -> None:
+        """Appends newly created cars to the dealership inventory catalog - Side Effect Function"""
+        if obj.model in cls.__inventory:
+            cls.__inventory[obj.model] += 1
+        else:
+            cls.__inventory[obj.model] = 1
+
+    @classmethod
+    def count_all_vehicles(cls) -> str:
+        """Retrieve all total vehicle counts"""
+        return TeslaVehicle.num_vehicles
+
+
+class TeslaVehicle:
+    """Tesla Vehicle Class"""
+
+    __num_vehicles: int = 0
+
+    def __new__(cls, *args, **kwargs) -> "TeslaVehicle":
+        """Object Creation"""
+        return super().__new__(cls)
+
+    def __init__(self, color: str, model: str) -> None:
+        """Initializing Obj"""
+        self.__color: str = color
+        self.__model: str = model
+        self.__class__.__num_vehicles += 1
+        OaklandDealership.update(self)
+
+    @property
+    def model(self) -> str:
+        """Getter for attribute model"""
+        return self.__model
+
+    def __repr__(self) -> str:
+        """Object Representation"""
+        return f"{type(self).__name__} ({id(self)}): {self.__model}, {self.__color}"
+
+    @classmethod
+    @property
+    def num_vehicles(cls) -> int:
+        """Getter for total number of TeslaVehicle instances"""
+        return cls.__num_vehicles
+
+
+def main() -> None:
+    """Testing Function"""
+    # Simple Test
+    cars = [
+        TeslaVehicle("red", "Model X"),
+        TeslaVehicle("red", "Model X"),
+        TeslaVehicle("red", "Model Y"),
+        TeslaVehicle("red", "Model 3"),
+        TeslaVehicle("red", "Model X"),
+    ]
+    print("Created Car Instances", *cars, sep="\n")
+    print(
+        "Dealership Inventory",
+        OaklandDealership.count_all_vehicles(),
+        OaklandDealership.inventory,
+        sep="\n",
+    )
+
+
+if __name__ == "__main__":
+    main()
