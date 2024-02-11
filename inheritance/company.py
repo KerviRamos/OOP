@@ -3,8 +3,6 @@
 #!usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-# Implement descriptor
-
 
 class Employee:
     """Employee class definition"""
@@ -20,14 +18,24 @@ class Employee:
         self._email: str = f"{first_name}.{last_name}@me.com"
         self._salary: float = salary
 
+    def __eq__(self, obj) -> bool:
+        """Compare Objects"""
+        if isinstance(obj, Employee):
+            return (
+                self._firs_name == obj._firs_name and self._last_name == obj._last_name
+            )
+        return False
+
     def fetch_details(self) -> dict[str | str, float]:
-        """Summary Info"""
-        return (
-            self.__dict__
-        )  # We need to filter the __dict__ to fetch for the appropiate keys (first_name, last_name, etc)
+        """Summary Info - Using self.__dict__ can be problematic"""
+        return {
+            k: v
+            for k, v in self.__dict__.items()
+            if k in ["_first_name", "_last_name", "_email", "_salary"]
+        }
 
     def update_details(self, **kwargs) -> None:
-        """Update Info"""
+        """Update Info - Using self.__dict__ can be problematic"""
         self.__dict__.update(kwargs)
 
 
@@ -38,7 +46,7 @@ class Developer(Employee):
         """Object creation"""
         return super().__new__(cls)
 
-    def __init__(  # Too many arguments
+    def __init__(
         self,
         first_name: str,
         last_name: str,
@@ -73,9 +81,7 @@ class Manager(Employee):
 
     def add(self, team_member: "Employee" | "Developer") -> None:
         """Add a new developer - Side Effect"""
-        if (
-            not team_member in self._developers  # implement __eq__ to compare objects
-        ):  # We dont want to access self_developers, we need descriptors or properties
+        if not team_member in self._developers:
             self._developers.add(team_member)
 
     def remove(self, team_member: "Employee" | "Developer") -> None:

@@ -7,21 +7,15 @@
 class OaklandDealership:
     """Car Dealership Class Located in Oakland, CA"""
 
-    __inventory = {}
-
-    @classmethod
-    @property
-    def inventory(cls) -> dict[str, int]:
-        """Getter Definition"""
-        return cls.__inventory
+    inventory = {}
 
     @classmethod
     def update(cls, obj: "TeslaVehicle") -> None:
         """Appends newly created cars to the dealership inventory catalog - Side Effect Function"""
-        if obj.model in cls.__inventory:
-            cls.__inventory[obj.model] += 1
+        if obj.model in cls.inventory:
+            cls.inventory[obj.model] += 1
         else:
-            cls.__inventory[obj.model] = 1
+            cls.inventory[obj.model] = 1
 
     @classmethod
     def count_all_vehicles(cls) -> str:
@@ -32,7 +26,7 @@ class OaklandDealership:
 class TeslaVehicle:
     """Tesla Vehicle Class"""
 
-    __num_vehicles: int = 0
+    num_vehicles: int = 0
 
     def __new__(cls, *args, **kwargs) -> "TeslaVehicle":
         """Object Creation"""
@@ -41,24 +35,13 @@ class TeslaVehicle:
     def __init__(self, color: str, model: str) -> None:
         """Initializing Obj"""
         self.__color: str = color
-        self.__model: str = model
-        self.__class__.__num_vehicles += 1
+        self.model: str = model
+        self.__class__.num_vehicles += 1
         OaklandDealership.update(self)
-
-    @property
-    def model(self) -> str:
-        """Getter for attribute model"""
-        return self.__model
 
     def __repr__(self) -> str:
         """Object Representation"""
-        return f"{type(self).__name__} ({id(self)}): {self.__model}, {self.__color}"
-
-    @classmethod
-    @property
-    def num_vehicles(cls) -> int:
-        """Getter for total number of TeslaVehicle instances"""
-        return cls.__num_vehicles
+        return f"{type(self).__name__} ({id(self)}): {self.model}, {self.__color}"
 
 
 def main() -> None:

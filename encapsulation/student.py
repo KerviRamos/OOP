@@ -6,7 +6,7 @@
 class Student:
     """
     Class Members Definition
-    Attributes:
+    Non-Public Attributes:
     - first_name
     - last_name
     - id_number
@@ -23,7 +23,7 @@ class Student:
     def __init__(
         self, first_name: str, last_name: str, id_number: int, declare_major: str
     ) -> None:
-        """Object State Initialization - Setting Private attributes via name mangling"""
+        """Object State Initialization - Setting Non-Public attributes via name mangling"""
         self.__first_name: str = first_name
         self.__last_name: str = last_name
         self.__id_number: int = id_number
