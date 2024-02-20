@@ -24,8 +24,8 @@ class Employee:
             return (
                 self._firs_name == obj._firs_name and self._last_name == obj._last_name
             )
-        return False
-    
+        return False 
+
     def __hash__(self):
         return hash((self._firs_name, self._last_name, self._salary))
 
@@ -68,7 +68,8 @@ class Developer(Employee):
 
     def __repr__(self) -> str:
         """Object representation"""
-        return f"Full_name: {self._firs_name +" "+self._last_name} Salary: {self._salary} Tech: {self._technology}"
+        return (f"Full_name: {self._firs_name +" "+self._last_name}"
+                f"Salary: {self._salary} Tech: {self._technology}")
 class Manager(Employee):
     """Manager definition"""
 
